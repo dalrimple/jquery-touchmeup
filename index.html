@@ -1,0 +1,56 @@
+<!doctype html>
+	<head>
+		<meta charset="utf-8">
+
+		<title></title>
+		<meta name="viewport" content="width=device-width">
+		<style type="text/css">
+			body {
+				font-family: Arial, "MS Trebuchet", sans-serif;
+			}
+			#touchTest {
+				width: 256px;
+				height: 256px;
+				background-color: red;
+			}
+		</style>
+
+		<!--script src="js/libs/modernizr-2.5.3.min.js"></script-->
+	</head>
+	<body>
+		<h1>jquery.touchmeup.js demo</h1>
+		<div id="touchTest"></div>
+
+		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="jquery.touchmeup.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var $touchTest = $("#touchTest");
+				function leftListener() {
+					$touchTest.html("Swiped Left");
+				}
+				function rightListener() {
+					$touchTest.html("Swiped Right");
+				}
+				function upListener() {
+					$touchTest.html("Swiped Up");
+				}
+				function downListener() {
+					$touchTest.html("Swiped Down");
+				}
+				function setRandomColor() {
+					function randomNumber() {return Math.floor(Math.random() * 256);}
+					$touchTest.css("background-color", "RGB(" + randomNumber() + ", " + randomNumber() + ", " + randomNumber() + ")");
+				}
+				$touchTest
+					.touchMeUP("add", "LEFT", leftListener)
+					.touchMeUP("add", "RIGHT", rightListener)
+					.touchMeUP("add", "UP", upListener)
+					.touchMeUP("add", "DOWN", downListener)
+					.touchMeUP("add", "LEFT", setRandomColor)
+					.touchMeUP("remove", "LEFT", leftListener);
+			});
+		</script>
+	</body>
+</html>
