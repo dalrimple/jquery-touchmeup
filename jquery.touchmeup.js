@@ -23,6 +23,10 @@
 	function touchStartListener(e, action, callback) {
 		//trace("touchStartListener", action, callback);
 		//return;
+		
+		//TODO This return object is too blunt. Make a friendly return object that optionaly 
+		//     contains the original event based on a config parameter. At least x & y coords and
+		//     context of x & y position. Maybe also delta from touch event.
 		var r = new Object();
 		r.touchstartEvent = e;
 		r.touchmoveEvents = new Array();
