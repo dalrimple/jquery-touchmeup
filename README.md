@@ -2,13 +2,11 @@
 
 An attempt at making a robust and easy to use touch plugin for jQuery.
 
----
-
-## Dependancies ##
+### Dependancies ###
 
 Just [jQuery](http://jquery.com/).
 
-## Usage ##
+### Usage ###
 
 Make sure jquery.touchmeup.js is included after the jQuery library:
 
@@ -37,19 +35,19 @@ The plugin also has some configuration options that can be set at any time using
 	}
 	$.fn.touchMeUp("config", configObject);
 
-`dataPrefix` is used as a prefix to data that is saved on the jQuery objects that listeners are attached to. If there is a possibility of a conflict with other data values, this can be changed to something unique.
-`dragThreshold` is a distance within which the direction of a swipe event is determined.
-`errorFn` is a a function that is called when an error is detected in the usage of the plugin
-`errorMessages` is an object containing the error messages passed to the error function.
+`dataPrefix` is used as a prefix to data that is saved on the jQuery objects that listeners are attached to. If there is a possibility of a conflict with other data values, this can be changed to something unique.  
+`dragThreshold` is a distance within which the direction of a swipe event is determined.  
+`errorFn` is a a function that is called when an error is detected in the usage of the plugin.  
+`errorMessages` is an object containing the error messages passed to the error function.  
 
 These defaults should not have to be changed, but the option is there if needed.
 
 Have a look at the index.html file for usage examples.
 
-## TODO ##
+### TODO ###
 
 Currently only swipes are supported, I plan on implementing events for taps, pinches, drags and multitouch. Also the event data that is passed to the listener function needs a lot of work to be useful, currently it is just a collection of all of the default event data in one object.
 
----
+##### acknowledgements #####
 
-I'd also like to thank [Charlie Gleason](https://github.com/superhighfives) for help on this plugin.  
+Thanks to [Charlie Gleason](https://github.com/superhighfives) for the support.
