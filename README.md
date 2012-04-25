@@ -50,4 +50,4 @@ Currently only swipes are supported, I plan on implementing events for taps, pin
 
 ##### acknowledgements #####
 
-Thanks to [Charlie Gleason](https://github.com/superhighfives) for the support.
+Thanks to [Charlie Gleason](https://github.com/superhighfives) for your support.
