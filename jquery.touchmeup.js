@@ -11,9 +11,9 @@
 		dragThreshold: 20,
 		errorFn: alert,
 		errorMessages: {invalidAction:'Action must be either LEFT, RIGHT, UP or DOWN.'}
-	}
+	};
 
-	var listenerLookup = new Object();
+	var listenerLookup = {};
 	var unqId = 0;
 
 	function validateAction(action) {
@@ -27,9 +27,9 @@
 		//TODO This return object is too blunt. Make a friendly return object that optionaly 
 		//     contains the original event based on a config parameter. At least x & y coords and
 		//     context of x & y position. Maybe also delta from touch event.
-		var r = new Object();
+		var r = {};
 		r.touchstartEvent = e;
-		r.touchmoveEvents = new Array();
+		r.touchmoveEvents = [];
 
 		var touch = e.touches[0];
 		var pageXStart = touch.pageX;
@@ -45,11 +45,11 @@
 			if (e.touches.length == 1 && (Math.abs(deltaX) < config.dragThreshold || Math.abs(deltaY) < config.dragThreshold)) {
 				if (deltaX < 0 && Math.abs(deltaX) > Math.abs(deltaY) && action == "LEFT") {
 					isSwipe = true;
-				} else if(deltaX > 0 && Math.abs(deltaX) > Math.abs(deltaY) && action == "RIGHT") {
+				} else if (deltaX > 0 && Math.abs(deltaX) > Math.abs(deltaY) && action == "RIGHT") {
 					isSwipe = true;
-				} else if(deltaY < 0 && Math.abs(deltaX) < Math.abs(deltaY) && action == "UP") {
+				} else if (deltaY < 0 && Math.abs(deltaX) < Math.abs(deltaY) && action == "UP") {
 					isSwipe = true;
-				} else if(deltaY > 0 && Math.abs(deltaX) < Math.abs(deltaY) && action == "DOWN") {
+				} else if (deltaY > 0 && Math.abs(deltaX) < Math.abs(deltaY) && action == "DOWN") {
 					isSwipe = true;
 				}
 			}
@@ -83,14 +83,14 @@
 	}
 
 	function pushListener($el, action, callback) {
-		var o = new Object();
+		var o = {};
 		o.listener = function(e) {
 			touchStartListener(e, action, callback);
 		};
 		o.callback = callback;
 		var lookupId = config.dataPrefix + unqId++;
 		listenerLookup[lookupId] = o;
-		if (!$el.data(config.dataPrefix + action)) $el.data(config.dataPrefix + action, new Array());
+		if (!$el.data(config.dataPrefix + action)) $el.data(config.dataPrefix + action, []);
 		$el.data(config.dataPrefix + action).push(lookupId);
 		return o;
 	}
@@ -132,7 +132,7 @@
 		config:function(options) {
 			$.extend(config, options);
 		}
-	}
+	};
 
 	//Manage method calling and initiation (standard jQuery plugin pattern)
 	$.fn.touchMeUP = function(method) {
