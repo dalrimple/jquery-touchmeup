@@ -46,7 +46,7 @@ Have a look at the index.html file for usage examples.
 
 ## TODO ##
 
-Currently only swipes are supported, I plan on implementing events for taps, pinches, drags and multitouch. Also the event data that is passed to the listener function needs a lot of work to be useful, currently it is just a collection of all of the default event data in one object.
+Currently only swipes are supported, I plan on implementing events for taps, pinches, drags, multitouch and rotation. Also the event data that is passed to the listener function needs a lot of work to be useful, currently it is just a collection of all of the default event data in one object.
 Add capability detection for and feedback for rare features like force, touchCancel, etc...
 
 ##### acknowledgements #####
